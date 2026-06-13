@@ -15,16 +15,15 @@
     <script>
         // 地图中心点：无锡，缩放等级12
         const map = L.map('map').setView([31.57, 120.29], 12);
-        // 高德地图底图
-L.tileLayer('https://webrd02.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&ltype=4&x={x}&y={y}&z={z}',{
-    attribution:'&copy; 高德地图'
-}).addTo(map);
+
+        // 高德矢量底图 ltype=4 彻底隐藏所有地名、道路文字
+        L.tileLayer('https://webrd02.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&ltype=4&x={x}&y={y}&z={z}',{
+            attribution:'&copy; 高德地图'
+        }).addTo(map);
+
         // 添加点位标记
         L.marker([31.57, 120.29]).addTo(map)
-          .bindPopup("自定义点位备注").openPopup();
+            .bindPopup("自定义点位备注").openPopup();
     </script>
 </body>
 </html>
-L.tileLayer('https://webst02.is.autonavi.com/appmaptile?style=6&ltype=4&x={x}&y={y}&z={z}',{
-    attribution:'&copy; 高德卫星图'
-}).addTo(map);
